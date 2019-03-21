@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example - 03</title>
+
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 75px [row-start-articles] 100px 100px 100px [row-end-articles] 75px;
+      grid-gap: 25px;
+    }
+
+    .grid-container > div, .grid-container article {
+      background-color: #e081b5;
+      padding: 25px;
+    }
+
+    /* Style header and footer */
+    .grid-container > div {
+      grid-column: 1 / 4;
+    }
+
+    /* Style articles */
+    .grid-container > article {
+      grid-row: row-start-articles / row-end-articles;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div>Header</div>
+    <article>Col-1</article>
+    <article>Col-2</article>
+    <article>Col-3</article>
+    <div>Footer</div>
+  </div>
+</body>
+</html>

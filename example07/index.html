@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example - 07</title>
+
+  <style>
+    .grid-container {
+      display: grid;
+      grid-gap: 25px;
+    }
+
+    .grid-container #sidebar {
+      display: none;
+    }
+
+    @media(min-width: 1200px) {
+      .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 100px 200px 200px 200px 100px;
+      }
+
+      .grid-container #sidebar {
+        display: block;
+      }
+    }
+
+    @media(min-width: 500px) and (max-width: 1199px) {
+      .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px 200px 200px 200px 200px 200px 100px;
+      }
+    }
+
+    .grid-container > div {
+      background-color: #e081b5;
+      padding: 25px;
+    }
+
+    /* Style header and footer */
+    .grid-container > div:first-of-type, .grid-container > div:last-of-type {
+      grid-column: 1 / -1;
+    }
+
+    /* Style sidebar */
+    .grid-container > div:nth-of-type(2) {
+      grid-row: 2 / 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div>Header</div>
+    <div id="sidebar">Sidebar</div>
+    <div>Col-1</div>
+    <div>Col-2</div>
+    <div>Col-3</div>
+    <div>Col-4</div>
+    <div>Col-5</div>
+    <div>Col-6</div>
+    <div>Col-7</div>
+    <div>Col-8</div>
+    <div>Col-9</div>
+    <div>Footer</div>
+  </div>
+</body>
+</html>

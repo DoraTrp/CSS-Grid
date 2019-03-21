@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Example - 02</title>
+
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: 200px 200px 200px;
+      grid-template-rows: 100px 200px 200px 200px 100px;
+      grid-gap: 25px;
+    }
+
+    .grid-container > div {
+      background-color: #e081b5;
+      padding: 25px;
+    }
+
+    /* Style header and footer */
+    .grid-container > div:first-of-type, .grid-container > div:last-of-type {
+      grid-column: 1 / 4;
+    }
+
+    /* Style sidebar */
+    .grid-container > div:nth-of-type(2) {
+      grid-row: 2 / 5;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div>Header</div>
+    <div>Sidebar</div>
+    <div>Col-1</div>
+    <div>Col-2</div>
+    <div>Col-3</div>
+    <div>Col-4</div>
+    <div>Col-5</div>
+    <div>Col-6</div>
+    <div>Footer</div>
+  </div>
+</body>
+</html>
